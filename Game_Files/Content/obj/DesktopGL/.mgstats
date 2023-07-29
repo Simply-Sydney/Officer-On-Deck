@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/carte/source/repos/SpaceGame/Placeholder/Content/SinglePixStar.png","C:/Users/carte/source/repos/SpaceGame/Placeholder/Content/bin/DesktopGL/SinglePixStar.xnb","TextureProcessor","Texture2DContent",119,89,0.0808747
+"C:/Users/carte/source/repos/SpaceGame/Placeholder/Content/star.png","C:/Users/carte/source/repos/SpaceGame/Placeholder/Content/bin/DesktopGL/star.xnb","TextureProcessor","Texture2DContent",49658,262229,0.0061384
