@@ -52,7 +52,8 @@ namespace Game_Files.Managers
                     chance = (int)Math.Abs(Math.Pow(x_pos - (galaxyWidth/2), 2) + (Math.Pow(y_pos - (galaxyHeight/2), 2)));
                     //If random number is greater than the chance, generate star, because greates chance is at 0: gal center
                     //Use of 1000000 is due to greatest distance from center being 1,213,200 without use of square-root for distance equation
-                    if(rndInt(0, 1000000) > chance)
+                    //-2000000 added to lower bound to make universe less dense overall. Using 0 lower bound caused completely filled center
+                    if(rndInt(-2000000, 1000000) > chance)
                     {
                         //Make the star
                         galaxyMap[x_pos, y_pos].exists = true;
@@ -69,37 +70,32 @@ namespace Game_Files.Managers
             }
         }
 
-        //public void galaxyGeneration(int resolutionWidth, int resolutionHeight)
-        //{
-        //    if (_galaxyShape == galaxyShapes.Spiral)
-        //    {
-        //        //generate a spiral galaxy
-        //    }
-        //    else if (_galaxyShape == galaxyShapes.Elliptical)
-        //    {
-        //        //Generate elliptical galaxy
-        //        //Divide screenspace into chunks
-        //        int galaxySizeInt = (int)_galaxySize;
-        //        int chunksX = resolutionWidth / galaxySizeInt;
-        //        int chunksY = resolutionHeight / galaxySizeInt;
-        //        //Randomly decide if chunk holds star based on distance from center
-        //        // Set seed based on location of star system
-        //        for (int currentChunkX = 0; currentChunkX < chunksX; currentChunkX++)
-        //        {
-        //            for (int currentChunkY = 0; currentChunkY < chunksY; currentChunkY++)
-        //            {
-        //                genSeed = (UInt32)((currentChunkX & 0xFFFF) << 16 | (currentChunkY & 0xFFFF));
-        //                //Decide if there is a star there
-        //                _galaxyMap[currentChunkX, currentChunkY].exists = false;
-        //            }
-        //        }
+        public void DrawGalaxyMap(SpriteBatch spriteBatch, int width, int height, Texture2D starTexture)
+        {
+            spriteBatch.Begin();
+            for(int x_pos = 0; x_pos < width; x_pos++)
+            {
+                for(int y_pos = 0; y_pos < height; y_pos++)
+                {
+                    //Draw the dang thing, pixel by pixel!
+                    if (galaxyMap[x_pos, y_pos].exists)
+                    {
+                        spriteBatch.Draw(starTexture, new Vector2(x_pos, y_pos), Color.White);
+                    }
+                }
+            }
+            spriteBatch.End();
+        }
 
-        //    }
-        //    else if (_galaxyShape == galaxyShapes.Random)
-        //    {
-        //        //Generate random galaxy
-        //    }
-        //}
+        public void LoadGalaxyData(string filePath)
+        {
+
+        }
+
+        public void SaveGalaxyData(string filePath)
+        {
+
+        }
 
         double rndDouble(double min, double max)
         {

@@ -23,7 +23,7 @@ namespace Game_Files
         private const float DESIGNED_RESOLUTION_ASPECT_RATIO = DESIGNED_RESOLUTION_WIDTH / (float)DESIGNED_RESOLUTION_HEIGHT;
 
         //Complate galaxy data structure
-        private GalaxyData galaxyData = new GalaxyData();
+        private UniverseGenerator universeData = new UniverseGenerator();
 
         private bool _drawGalaxyMap = false;
         private int galacticScaleFactor = 1;
@@ -46,6 +46,9 @@ namespace Game_Files
             // TODO: Add your initialization logic here
             IsMouseVisible = true;
 
+            starTexture = new Texture2D(GraphicsDevice, 1, 1);
+            starTexture.SetData(new Color[] { Color.White });
+
             base.Initialize();
         }
 
@@ -55,10 +58,8 @@ namespace Game_Files
 
             if (SavePresent)
             {
-                galaxyData.LoadGalaxyData("galaxy.xml");
+                universeData.LoadGalaxyData("galaxy.xml");
             }
-
-            starTexture = Content.Load<Texture2D>("SinglePixStar");
 
             // TODO: use this.Content to load your game content here
         }
@@ -76,6 +77,7 @@ namespace Game_Files
             if (Keyboard.GetState().IsKeyDown(Keys.G))
             {
                 //galaxyData.generateGalaxy(GalaxyData.galShapes.Elliptical, GalaxyData.galSize.Small);
+                universeData.galaxyGeneration(DESIGNED_RESOLUTION_WIDTH, DESIGNED_RESOLUTION_HEIGHT);
             }
 
             mouse = Mouse.GetState();
@@ -99,7 +101,7 @@ namespace Game_Files
             if (_drawGalaxyMap)
             {
                 GraphicsDevice.Clear(Color.DarkBlue);
-                galaxyData.DisplayGalaxyMap(_spriteBatch, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, galacticScaleFactor, mapOffset, starTexture);
+                universeData.DrawGalaxyMap(_spriteBatch, DESIGNED_RESOLUTION_WIDTH, DESIGNED_RESOLUTION_HEIGHT, starTexture);
             }
             // TODO: Add your drawing code here
 
