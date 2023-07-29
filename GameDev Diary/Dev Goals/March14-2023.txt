@@ -1,0 +1,37 @@
+/*******************************
+ * Date: Mar 14, 2023
+ * Focus: Development Environemt Setup
+ * Sub-Goal: Start Work on Universe Generator
+ *******************************
+ 
+ Primary Goal - to setup both Monogame and Visual Studio to begin work on the universe generator system
+ ---------------------------------------------------------------
+	By end of work period, should have project location setup as well as some begining files to hold the generator
+
+ Sub Goal - to start working on universe generator system
+ ---------------------------------------------------------------
+    - System should create and save a persistant and random universe containing systems and planets with unique features
+	- System should base planetary features on core attributes of the system, star type, and interacting characteristics
+		- Example:
+			Star is an orange G2V class star (Based on Sun)
+				- Star effective tempurature is 5770K
+				- Star habitability zone is .85 - 1.5 AU
+			Planet A is .35 AU from star (Based on Mercury)
+				- Planet A is mostly molten rock
+					- Planet A has metal content of 4/10
+				- Planet A orbital period is 88 Earth Days
+				- Planet A is .38 Earth Radius
+				- Planet A surface gravity is .37G
+				- Planet A effective (blackbody) tempurature is 437K
+			Planet B is 9.5 AU from star (Based on Saturn)
+				- Planet B is a gas giant
+				- Planet B orbital period is 29.4 Earth Years
+				- Planet B is 9.1 Earth Radius
+				- Planet B contains hydrogen-helium gas
+				- Planet B surface gravity is 1.05G
+				- Planet B effective (blackbody) tempurature is 135K
+			Asteroid field is 4.3 AU from star
+				- Rock type, etc goes here
+			Gas Cloud is 25.6 AU from star
+				- Size and gasses included goes here
+		-Should use mathmatical models and formulas to determine more characteristics from base ones such as size and distance from star

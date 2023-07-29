@@ -1,0 +1,29 @@
+/***************************
+ * Date: March 14, 2023
+ * Topic: Universe Generator
+ ***************************
+ 
+Universe generator should start with universe type selection:
+	- Size
+	- Shape
+	- Age
+	
+Generator should then populate a map using chosen characteristics and a high speed psuedo-random number generator / noise generator
+Generator will then save the result to a file
+Planets within systems will be created at a later time utilizing mathmatical models that take star and age characteristics as inputs
+	- Example:
+		Star is similar to the Sun,
+		Planets are randomly generated within the system around the star, with biases (elaborated on later, but will give systems "flavor")
+		Planet characteristics are generated using math with their placement and size being inputs
+		System and life within it will be changed based on time-from-game-start (Basically "aging up" the system based on how far in game its made)
+Empires will be static for the time being, and be generated / handled by seperate system
+
+IDEA (not sure about it):
+	"Colonized Space" will be generated along with system, rather than newly discovered systems
+	Basically universe generator and system generator will treat colonized space as already "Discovered"
+	"Discovered" for the generator will be different and removed from "Discovered" as in what is visable to the player
+	
+Generation Procedure:
+	- Divide screen size (pixels) into 'chunks' which can each hold 1 star sector
+	- Use coordinates of chunk to determine whether a star exists there
+		- Closer to galactic center means higher likelihood of star existing

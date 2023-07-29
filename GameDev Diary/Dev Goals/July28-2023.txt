@@ -1,0 +1,14 @@
+/*******************************
+ * Date: July 28, 2023
+ * Focus: Create Github Repo
+ * Sub-Goal: Get universe generator working!
+ *******************************
+ 
+ Primary Goal - Create github repo and upload current project in all of its unashamed glory
+ ---------------------------------------------------------------
+	By end of work period, should have project location setup and uploaded to github
+	
+ Sub Goal - Finish generator system and have it ready for implementation into map display
+ ---------------------------------------------------------------
+	- Eliminated galaxy size and type selection to fix bugs and get initial system running first
+	- Galaxy generation will not generate planets for every star at this point, just have star systems and a map to display them
