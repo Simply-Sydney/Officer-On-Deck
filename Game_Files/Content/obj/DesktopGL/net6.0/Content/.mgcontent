@@ -4,8 +4,8 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/carte/OneDrive/Documents/Game Project/Officer-On-Deck/Game_Files/Content/SinglePixStar.png</File>
-    <File>C:/Users/carte/OneDrive/Documents/Game Project/Officer-On-Deck/Game_Files/Content/star.png</File>
+    <File>D:/GitHub/Officer-On-Deck/Game_Files/Content/SinglePixStar.png</File>
+    <File>D:/GitHub/Officer-On-Deck/Game_Files/Content/star.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

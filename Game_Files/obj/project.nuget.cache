@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xRIKYkumtBss6ilZYy7DFriAtEPrdIefypSsOt3kKNDycM0nOh1A3HQR6kXTBHQYHBMlB0tGfKpMpPKP1nxLkQ==",
+  "dgSpecHash": "OdjevqirJZgU3qqECOpi+rbeMk3u3NTbrzp8usfIw5GtROh69F2XSkCMUV8QF88KMDMlDZM7sPWbACSb+iLI2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\carte\\OneDrive\\Documents\\Game Project\\Officer-On-Deck\\Game_Files\\Officer-On-Deck.csproj",
+  "projectFilePath": "D:\\GitHub\\Officer-On-Deck\\Game_Files\\Officer-On-Deck.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\carte\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\carte\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",

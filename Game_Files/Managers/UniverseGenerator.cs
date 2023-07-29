@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using static Game_Files.Managers.UniverseGenerator;
 
 namespace Game_Files.Managers
 {
@@ -53,7 +52,7 @@ namespace Game_Files.Managers
                     //If random number is greater than the chance, generate star, because greates chance is at 0: gal center
                     //Use of 1000000 is due to greatest distance from center being 1,213,200 without use of square-root for distance equation
                     //-2000000 added to lower bound to make universe less dense overall. Using 0 lower bound caused completely filled center
-                    if(rndInt(-2000000, 1000000) > chance)
+                    if(rndInt(-9000000, 1000000) > chance)
                     {
                         //Make the star
                         galaxyMap[x_pos, y_pos].exists = true;
@@ -80,7 +79,38 @@ namespace Game_Files.Managers
                     //Draw the dang thing, pixel by pixel!
                     if (galaxyMap[x_pos, y_pos].exists)
                     {
-                        spriteBatch.Draw(starTexture, new Vector2(x_pos, y_pos), Color.White);
+                        if (galaxyMap[x_pos, y_pos].starType == 'O')
+                        {
+                            spriteBatch.Draw(starTexture, new Vector2(x_pos, y_pos), Color.Blue);
+                        }
+                        else if (galaxyMap[x_pos, y_pos].starType == 'B')
+                        {
+                            spriteBatch.Draw(starTexture, new Vector2(x_pos, y_pos), Color.CornflowerBlue);
+                        }
+                        else if (galaxyMap[x_pos, y_pos].starType == 'A')
+                        {
+                            spriteBatch.Draw(starTexture, new Vector2(x_pos, y_pos), Color.LightBlue);
+                        }
+                        else if (galaxyMap[x_pos, y_pos].starType == 'F')
+                        {
+                            spriteBatch.Draw(starTexture, new Vector2(x_pos, y_pos), Color.White);
+                        }
+                        else if (galaxyMap[x_pos, y_pos].starType == 'G')
+                        {
+                            spriteBatch.Draw(starTexture, new Vector2(x_pos, y_pos), Color.Yellow);
+                        }
+                        else if (galaxyMap[x_pos, y_pos].starType == 'K')
+                        {
+                            spriteBatch.Draw(starTexture, new Vector2(x_pos, y_pos), Color.Orange);
+                        }
+                        else if (galaxyMap[x_pos, y_pos].starType == 'M')
+                        {
+                            spriteBatch.Draw(starTexture, new Vector2(x_pos, y_pos), Color.Red);
+                        }
+                        else
+                        {
+                            spriteBatch.Draw(starTexture, new Vector2(x_pos, y_pos), Color.White);
+                        }
                     }
                 }
             }

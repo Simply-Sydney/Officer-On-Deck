@@ -1,0 +1,49 @@
+/***************************
+ * Date: July 29, 2023
+ * Topic: Galaxy Map View
+ ***************************
+ 
+Galaxy is currently set to be 1920 by 1080 pixels / star slots wide
+	- This means that there is a maximum of 2,073,600 possible star systems
+	- Currently this displays across a 1920 x 1080 screenspace, making pixel to star mapping 1:1
+	PROBLEM: When zooming in, where and how do we display the new star positions?
+	- Stars must grow in size from a 1 pixel color image. This must grow in size as a circle in proportion to the 'zoom'
+	- Space between the stars must also grow in size. Should this grow by a full pixel? IE: 1x1 pixel space to 1x2 pixel space between stars?
+	  Or should this grow in a square, IE: 1x1 -> 2x2 -> 4x4 -> 8x8?
+	  
+	Visual Representation. Imagine that 'x' means a star exists there:
+	-----------------------------------------------------
+	|  x x    x   xx   x         x  x      x x  x   xx
+	| x     x x     x   x x   xx       x         x 
+	|  x          x      x       x   x  x   xx     x 
+	|x x xx    x  x    x x x x      x      x   xx    x
+	|     x   x x   x  x   xx     x           x   xx 
+	|
+
+	If the view then shrinks to this:
+	-----------------------------------------------------
+	|  x x    x   xx   x         x  x      x x  x   xx
+	|                 -----------
+	| x     x x     x | x x   xx|      x         x 
+	|  x          x   |  x      |x   x  x   xx     x 
+	|x x xx    x  x   |x x x x  |    x      x   xx    x
+	|				  -----------
+	|     x   x x   x  x   xx     x           x   xx 
+	|
+	
+	It should expand to fill the screen, increasing star size as well:
+	-----------------------------------------------------
+	|      x     x                 x   x
+	|     xOx   xOx               xOx xOx
+	|      x     x                 x   x
+	|
+	|         x
+	|        xOx
+	|         x
+	|
+	|   x     x     x     x
+	|  xOx   xOx   xOx   xOx
+	|   x     x     x     x
+	
+	
+	...But how the heck do I turn that into math to display this to the player?

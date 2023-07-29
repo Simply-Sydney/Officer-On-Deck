@@ -24,6 +24,8 @@ namespace Game_Files
 
         //Complate galaxy data structure
         private UniverseGenerator universeData = new UniverseGenerator();
+        private int galViewWidth = 1920;
+        private int galViewHeight = 1080;
 
         private bool _drawGalaxyMap = false;
         private int galacticScaleFactor = 1;
@@ -48,6 +50,11 @@ namespace Game_Files
 
             starTexture = new Texture2D(GraphicsDevice, 1, 1);
             starTexture.SetData(new Color[] { Color.White });
+
+            //Expand the playable window to the designed height and width in pixels
+            _graphics.PreferredBackBufferWidth = DESIGNED_RESOLUTION_WIDTH;
+            _graphics.PreferredBackBufferHeight = DESIGNED_RESOLUTION_HEIGHT;
+            _graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -100,8 +107,8 @@ namespace Game_Files
             GraphicsDevice.Clear(Color.CornflowerBlue);
             if (_drawGalaxyMap)
             {
-                GraphicsDevice.Clear(Color.DarkBlue);
-                universeData.DrawGalaxyMap(_spriteBatch, DESIGNED_RESOLUTION_WIDTH, DESIGNED_RESOLUTION_HEIGHT, starTexture);
+                GraphicsDevice.Clear(Color.Black);
+                universeData.DrawGalaxyMap(_spriteBatch, galViewWidth, galViewHeight, starTexture);
             }
             // TODO: Add your drawing code here
 
